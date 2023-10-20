@@ -14,8 +14,8 @@ services:
     build: ./backend/
     env_file: .env
     volumes:
-      - static:/app/static
-      - media:/app/static
+      - static:/static/
+      - media:/app/media/
   frontend:
     image: andreytsay/kittygram_frontend
     env_file: .env
