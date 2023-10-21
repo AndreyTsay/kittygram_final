@@ -31,5 +31,5 @@ services:
     volumes:
       - static:/static
       - media:/app/static
-    cd depends_on:
+    depends_on:
       - backend
