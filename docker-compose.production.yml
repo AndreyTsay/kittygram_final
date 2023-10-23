@@ -14,7 +14,7 @@ services:
   backend:
     image: andreytsay/kittygram_backend:latest
     env_file: .env
-    depends on:
+    depends_on:
       - db
     volumes:
       - static:/backend_static/
@@ -26,7 +26,7 @@ services:
     command: cp -r /app/build/. /frontend_static/
     volumes:
       - static:/frontend_static
-    depends on:
+    depends_on:
       - backend
       
   gateway:
@@ -37,5 +37,5 @@ services:
       - media:/app/media/
     ports:
       - 9000:80
-    depends on:
+    depends_on:
       - frontend
