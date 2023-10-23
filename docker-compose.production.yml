@@ -19,6 +19,7 @@ services:
     volumes:
       - static:/backend_static/
       - media:/app/media/
+
   frontend:
     env_file: .env
     image: andreytsay/kittygram_frontend:latest
@@ -27,6 +28,7 @@ services:
       - static:/frontend_static
     depends on:
       - backend
+      
   gateway:
     image: andreytsay/kittygram_gateway:latest
     env_file: .env
