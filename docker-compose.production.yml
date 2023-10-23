@@ -17,15 +17,15 @@ services:
     depends_on:
       - db
     volumes:
-      - static:/backend_static/
-      - media:/app/media/
+      - static:/static
+      - media:/app/media
 
   frontend:
     env_file: .env
     image: andreytsay/kittygram_frontend:latest
-    command: cp -r /app/build/. /frontend_static/
+    command: cp -r /app/build/. /static/
     volumes:
-      - static:/frontend_static
+      - static:/static
     depends_on:
       - backend
       
@@ -33,9 +33,9 @@ services:
     image: andreytsay/kittygram_gateway:latest
     env_file: .env
     volumes:
-      - static:/static/
-      - media:/app/media/
+      - static:/static
+      - media:/app/media
     ports:
       - 9000:80
     depends_on:
-      - frontend
+      - backend
