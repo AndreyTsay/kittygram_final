@@ -33,8 +33,8 @@ services:
     image: andreytsay/kittygram_gateway:latest
     env_file: .env
     volumes:
-      - static:/static
-      - media:/media/
+      - static:/static/
+      - media:/media
     ports:
       - 9000:80
     depends_on:
