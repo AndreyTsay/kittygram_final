@@ -52,20 +52,6 @@ Clone the "Kittygram" repository and navigate to it
 git clone https://git@github.com:AndreyTsay/kittygram_final.git
 ```
 
-Create and activate a virtual environment
-
-```
-python3 -m venv venv
-sourse venv/bin/activate
-```
-
-Update pip and install dependencies from requirements.txt
-
-```
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-```
-
 Create the .env file and fill up according the .env.excample file
 
 ```
